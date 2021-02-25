@@ -6,9 +6,15 @@ import Filter from "./Filter";
 
 function App() {
 
-  const [ filter, updateFilter ] = useState( { greased: false } );
+  const [ filter, updateFilter ] = useState( { greased: false, sort: "none" } );
 
   const filteredHogs = hogs.filter( hog => filter.greased ? hog.greased : true );
+
+  if ( filter.sort === "name" ) {
+    filteredHogs.sort( ( thisHog, thatHog ) => thisHog.name < thatHog.name ? -1 : 1 );
+  } else if ( filter.sort === "weight" ) {
+    filteredHogs.sort( ( thisHog, thatHog ) => thisHog.weight - thatHog.weight );
+  }
 
   return (
     <div className="App">

@@ -6,11 +6,23 @@ function Filter( { filter, updateFilter } ) {
         updateFilter( updatedFilter );
     }
 
+    function toggleSort( sortChangeEvent ) {
+        const updatedFilter = { ...filter };
+        updatedFilter.sort = sortChangeEvent.target.value;
+        updateFilter( updatedFilter );
+    }
+
     return (
-        <div>
+        <form>
             <input type="checkbox" name="greased" onChange={ toggleGreased }/>
-            <label htmlfor="greased"> Filter greased hogs</label>
-        </div>
+            <label htmlFor="greased"> Filter greased hogs</label> |
+            <label htmlFor="sort"> Sort hogs: </label>
+            <select name="sort" onChange={ toggleSort }>
+                <option value="none">n/a</option>
+                <option value="name">By Name</option>
+                <option value="weight">By Weight</option>
+            </select>
+        </form>
     );
 
 }
