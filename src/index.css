@@ -73,11 +73,9 @@ ul {
   font-size: .75em;
 }
 
-
 .indexWrapper {
   margin: auto;
 }
-
 
 .pigTile {
   display: inline;
@@ -86,7 +84,7 @@ ul {
   float: left;
   margin: 2%;
   padding: 1%;
-  outline: #3B0B0B dotted thick;
+  /* outline: #3B0B0B dotted thick; */
   transition: 0.75s;
   opacity: 1;
 }
@@ -128,7 +126,6 @@ ul {
   transform: scale(1.05);
 }
 
-
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
   height: 80px;
@@ -140,6 +137,9 @@ ul {
   clear: both;
 }
 
+.hidden {
+  display: none;
+}
 
 @keyframes App-logo-spin {
   from {
